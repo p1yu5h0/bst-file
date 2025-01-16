@@ -39,9 +39,10 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
 //search endpoint
 app.get("/search", (req, res) => {
-  const key = req.query.key;
+  const key = req.query.query;
+  console.log(key);
   const result = tree.search(key);
-
+  console.log(result);
   if (result) {
     res.json({
       success: true,
